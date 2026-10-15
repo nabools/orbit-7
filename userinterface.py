@@ -13,3 +13,6 @@ print("="*55)
 print("test")
 
 print("Nisa' code")
+ptint("Test")
+
+print("Nisa'code")
