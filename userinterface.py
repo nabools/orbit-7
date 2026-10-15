@@ -34,3 +34,16 @@ if choice == "1":
   else:
     destination = "Europa"
     base_fare = 900000
+
+
+   # 3. View Fare and Training Guide
+    elif choice == "3":
+        print("\n=== FARE & TRAINING GUIDE ===")
+        print("Destinations (One-Way / Round-Trip):")
+        print("  - Moon   : RM150,000 / RM270,000")
+        print("  - Mars   : RM450,000 / RM810,000")
+        print("  - Europa : RM900,000 / RM1,620,000")
+        print("Pre-Flight Training (Per Pax):")
+        print("  - Mandatory Safety Clearance : RM15,000 (Required)")
+        print("  - Zero-Gravity Orientation   : RM25,000 (Optional)")
+        print("  - Spacesuit Fitting          : RM35,000 (Optional)")
