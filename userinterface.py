@@ -22,6 +22,14 @@ if choice == "1":
   name = input("Enter Primary passenger name: ")
   passengers = int(input("Enter number of passengers: "))
 
+elif choice == "2":
+        print("\n=== ALL CONFIRMED BOOKINGS ===")
+        if len(bookings) == 0:
+            print("No bookings found.")
+        else:
+            for i, b in enumerate(bookings, 1):
+                print(f"{i}. {b}")
+
         # Destination selection
   print("Destinations: 1. Moon | 2. Mars | 3. Europa")
   dest_choice = input("Choose destination (1/2/3): ")
