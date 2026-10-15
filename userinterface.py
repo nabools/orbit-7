@@ -43,7 +43,7 @@ if choice == "1":
         print("  - Moon   : RM150,000 / RM270,000")
         print("  - Mars   : RM450,000 / RM810,000")
         print("  - Europa : RM900,000 / RM1,620,000")
-        print("Pre-Flight Training (Per Pax):")
+        print("Pre-Flight Training (Per Pessanger):")
         print("  - Mandatory Safety Clearance : RM15,000 (Required)")
         print("  - Zero-Gravity Orientation   : RM25,000 (Optional)")
         print("  - Spacesuit Fitting          : RM35,000 (Optional)")
