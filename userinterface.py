@@ -11,3 +11,4 @@ print("4. Exit")
 print("="*55)
 
 print("test")
+ptint("Test")
