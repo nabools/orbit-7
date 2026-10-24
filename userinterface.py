@@ -10,13 +10,6 @@ print("3. View Fare and Training Guide")
 print("4. Exit")
 print("="*55)
 
-print("test")
-
-print("Nisa' code")
-ptint("Test")
-
-print("Nisa'code")
-print ("Ashiqur Rahman")
 if choice == "1":
   print("\n--- BOOK A FLIGHT ---")
   name = input("Enter Primary passenger name: ")
