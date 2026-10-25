@@ -1,9 +1,9 @@
 ORBIT7: Space Flight & Pre-Flight Training Booking System
 
 About the Program :
-ORBIT7 is a Python-based booking system that simulates commercial space travel in the year 2050. It allows users to book flights to the Moon, Mars, or Europa, choose between one-way and round-trip tickets, and select pre-flight training sessions through a single application.
+ORBIT7 is a Python-based booking system that simulates commercial space travel in the year 2050. It allows users to book flights to the Moon, Mars, or Vensus, choose between one-way and round-trip tickets, and select pre-flight training sessions through a single application.
 
-The program calculates the total flight fare and training fees based on the user's selections. It also allows users to confirm bookings and view previously confirmed bookings during the current program session.
+The program calculates the total flight fare and training fees based on the user's selections. 
 
 Main Features :
 1. Space Flight Booking: Select a destination, ticket type, and number of passengers.
