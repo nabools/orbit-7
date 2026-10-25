@@ -3,40 +3,34 @@ mars_fare = 45000
 venus_fare = 50000
 
 safety_fee = 5000
-zero_fee = 12000
+zero_gravity_fee = 12000
 spacesuit_fee = 8000
 
 #User interface for orbit7 booking menu 
 def display_menu():
-    print("=" * 55)
+    print("=" * 50)
     print("              ORBIT7 SPACE TRAVEL")
     print("          BOOKING SYSTEM - YEAR 2050")
-    print("=" * 55)
+    print("=" * 50)
     print("  Your journey beyond Earth starts here!")
-    print("-" * 55)
+    print("-" * 50)
     print("  1. Book a Space Flight")
-    print("  2. View All Bookings")
-    print("  3. View Fare and Training Guide")
-    print("  4. Exit")
-    print("=" * 55)
+    print("  2. View Fare and Training Guide")
+    print("  3. Exit")
+    print("=" * 50)
 
-# Part 3: Fare guide
-
+#This section is to display the price menu for tickets & pre-flight training options
 def fare_guide():
+    print("=== Ticket Fees ===")
     print("\nMOON FARE: RM", moon_fare)
     print("MARS FARE: RM", mars_fare)
     print("VENUS FARE: RM", venus_fare)
-
+    
+    print("\n === Pre-flight training Fees ===")
     print("\nSAFETY CLEARANCE: RM", safety_fee)
-    print("ZERO-GRAVITY: RM", zero_fee)
+    print("ZERO-GRAVITY: RM", zero_gravity_fee)
     print("SPACESUIT FITTING: RM", spacesuit_fee)
-    print("\nPassenger details recorded.")
-    print("Name:", passenger_name)
-    print("Destination:", destination)
-    print("Ticket type:", ticket_type)
-    print("Number of passengers:", passenger_count)
-
-
+#This section is to get user's (name, destination,ticket type, no. passengers, pre-flight training options) and also give summary at the end 
 def book_flight():
     name = input("\nEnter passenger name: ")
 
@@ -45,7 +39,6 @@ def book_flight():
     print("3. Venus")
 
     destination_choice = input("Choose destination: ")
-
     if destination_choice == "1":
         destination = "Moon"
         fare = moon_fare
@@ -58,7 +51,7 @@ def book_flight():
     else:
         print("Invalid destination.")
         return
-
+    #TIcket type
     print("\n1. One-way")
     print("2. Round-trip")
 
@@ -72,7 +65,7 @@ def book_flight():
     else:
         print("Invalid ticket type.")
         return
-
+    #number of passengers
     passengers = int(input("Number of passengers: "))
 
     if passengers <= 0:
@@ -80,66 +73,33 @@ def book_flight():
         return
 
     flight_total = fare * passengers
-
-    # Mandatory safety clearance
     safety_total = safety_fee * passengers
 
-    # Optional training
-    zero = input("Include zero-gravity training? (Y/N): ").upper()
+    zero_gravity_fee = input("Include zero-gravity training? (Yes/No): ").title()
+    suit = input("Include spacesuit fitting? (Yes/No): ").title()
 
-    if zero == "Y":
-        zero_total = zero_fee * passengers
-    else:
-        zero_total = 0
-
-    suit = input("Include spacesuit fitting? (Y/N): ").upper()
-
-    if suit == "Y":
+     if zero_gravity_fee == "Yes":
+        zero_gravity_total = zero_fee * passengers
+    elif zero_gravity_fee == "No" :
+        zero_gravity_total = 0
+        
+    if suit == "Yes":
         suit_total = spacesuit_fee * passengers
-    else:
+    elif suit == "No" :
         suit_total = 0
 
-    total = flight_total + safety_total + zero_total + suit_total
+    total_cost = flight_total + safety_total + zero_gravity_total + suit_total
 
-    # Booking summary
-    print("\n--- BOOKING SUMMARY ---")
+    print("\n=== BOOKING SUMMARY ===")
     print("Passenger:", name)
     print("Destination:", destination)
     print("Ticket:", ticket_type)
     print("Passengers:", passengers)
     print("Flight fare: RM", flight_total)
     print("Safety clearance: RM", safety_total)
-    print("Zero-gravity: RM", zero_total)
+    print("Zero-gravity: RM", zero_gravity_total)
     print("Spacesuit fitting: RM", suit_total)
-    print("TOTAL: RM", total)
-
-    confirm = input("Confirm booking? (Y/N): ").upper()
-
-    if confirm == "Y":
-        booking = (name, destination, ticket_type, passengers,flight_total, safety_total, zero_total, suit_total, total)
-        bookings = bookings + [booking]
-        print("Booking confirmed!")
-    
-    else:
-        print("Booking cancelled.")
-
-
-
-def view_bookings():
-     if len(bookings) == 0:
-        print("No confirmed bookings.")
-     else:
-        for booking in bookings:
-            print("\nPassenger:", booking[0])
-            print("Destination:", booking[1])
-            print("Ticket:", booking[2])
-            print("Passengers:", booking[3])
-            print("Flight fare: RM", booking[4])
-            print("Safety clearance: RM", booking[5])
-            print("Zero-gravity: RM", booking[6])
-            print("Spacesuit fitting: RM", booking[7])
-            print("TOTAL: RM", booking[8])
-
+    print("TOTAL: RM", total_cost)
 
 while True:
     display_menu()
@@ -148,10 +108,8 @@ while True:
     if choice == "1":
         book_flight()
     elif choice == "2":
-        view_bookings()
-    elif choice == "3":
         fare_guide()
-    elif choice == "4":
+    elif choice == "3":
         print("Thank you for using ORBIT7!")
         break
     else:
