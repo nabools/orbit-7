@@ -62,7 +62,7 @@ def book_flight():
     print("\n1. One-way")
     print("2. Round-trip")
 
-    ticket = input("Choose ticket type: ")
+    ticket = int(input("Choose ticket type (1/2) : "))
 
     if ticket == "1":
         ticket_type = "One-way"
