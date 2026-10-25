@@ -64,9 +64,9 @@ def book_flight():
 
     ticket = int(input("Choose ticket type (1/2) : "))
 
-    if ticket == "1":
+    if ticket == 1:
         ticket_type = "One-way"
-    elif ticket == "2":
+    elif ticket == 2:
         ticket_type = "Round-trip"
         fare = fare * 2
     else:
@@ -128,7 +128,7 @@ def book_flight():
 def view_bookings():
      if len(bookings) == 0:
         print("No confirmed bookings.")
-    else:
+     else:
         for booking in bookings:
             print("\nPassenger:", booking[0])
             print("Destination:", booking[1])
