@@ -1,6 +1,6 @@
-moon_fare = 10 
-mars_fare = 35
-venus_fare = 200
+moon_fare = 35000
+mars_fare = 45000
+venus_fare = 50000
 
 safety_fee = 5000
 zero_fee = 12000
@@ -38,7 +38,7 @@ def fare_guide():
 
 
 def book_flight():
-    name = input("Enter passenger name: ")
+    name = input("\nEnter passenger name: ")
 
     print("\n1. Moon")
     print("2. Mars")
@@ -116,17 +116,17 @@ def book_flight():
     confirm = input("Confirm booking? (Y/N): ").upper()
 
     if confirm == "Y":
-        booking = (name, destination, ticket_type, passengers,
-                   flight_total, safety_total, zero_total, suit_total, total)
-        bookings.append(booking)
+        booking = (name, destination, ticket_type, passengers,flight_total, safety_total, zero_total, suit_total, total)
+        bookings = bookings + [booking]
         print("Booking confirmed!")
+    
     else:
         print("Booking cancelled.")
 
 
 
 def view_bookings():
-    if bookings == []:
+     if len(bookings) == 0:
         print("No confirmed bookings.")
     else:
         for booking in bookings:
