@@ -79,7 +79,7 @@ def book_flight():
     suit = input("Include spacesuit fitting? (Yes/No): ").title()
 
      if zero_gravity_fee == "Yes":
-        zero_gravity_total = zero_fee * passengers
+        zero_gravity_total = zero_gravity_fee * passengers
     elif zero_gravity_fee == "No" :
         zero_gravity_total = 0
         
