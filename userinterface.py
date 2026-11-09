@@ -133,14 +133,14 @@ def book_flight():
 
 while True:
     display_menu()
-    choice = input("Enter your choice: ")
+    choice = int(input("Enter your choice: "))
 
-    if choice == "1":
+    if choice == 1:
         book_flight()
 
-    elif choice == "2":
+    elif choice == 2 :
         fare_guide()
 
-    elif choice == "3":
+    elif choice == 3:
         print("Thank you for using ORBIT7!")
         break
