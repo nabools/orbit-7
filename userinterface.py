@@ -7,7 +7,7 @@ zero_gravity_fee = 12000
 spacesuit_fee = 8000
 
 destinations = ["Moon", "Mars", "Venus"]
-ticket_types = ("One-way", "Round-trip")
+ticket_types = ["One-way", "Round-trip"]
 
 #User interface for orbit7 booking menu 
 def display_menu():
